@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 const StyledButton = styled.button`
   padding: 1rem 2rem;
-  background-color: ${(props) => props.theme.colors.font};
+  border-radius: 0.5rem;
+  background-color: ${(props) => props.theme.colors.inputDark};
   border: none;
 `;
 

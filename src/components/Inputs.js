@@ -5,17 +5,30 @@ import ModifyButton from './ModifyButton';
 const StyledLabel = styled.label`
   display: block;
   margin-bottom: 1rem;
+  font-size: 1.9rem;
+
+  &.last {
+    margin-top: 1rem;
+  }
 `;
 
 const StyledInput = styled.input`
   padding: 1rem 2rem;
-  width: auto;
+  background-color: ${(props) => props.theme.colors.inputLight};
+  width: 100%;
   outline: none;
   border: none;
-  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
 `;
 
-const StyledBillInput = styled(StyledInput)`
+const StyledTipInput = styled(StyledInput)`
+  margin: 0 1rem 0 1rem;
+`;
+
+const StyledDiv = styled.div`
+  display: flex;
+  align-items: center;
   width: 100%;
 `;
 
@@ -24,17 +37,17 @@ const Inputs = (props) => {
     <>
       <div>
         <StyledLabel htmlFor="bill">Bill</StyledLabel>
-        <StyledBillInput
-          type="number"
-          placeholder="Your total bill"
-          id="bill"
-        />
+        <StyledInput type="number" placeholder="Your total bill" id="bill" />
       </div>
       <div>
-        <StyledLabel htmlFor="tip">Tip</StyledLabel>
-        <ModifyButton>-</ModifyButton>
-        <StyledInput type="text" id="tip" defaultValue="15%" />
-        <ModifyButton>+</ModifyButton>
+        <StyledLabel htmlFor="tip" className="last">
+          Tip
+        </StyledLabel>
+        <StyledDiv>
+          <ModifyButton>-</ModifyButton>
+          <StyledTipInput type="text" id="tip" defaultValue="15%" />
+          <ModifyButton>+</ModifyButton>
+        </StyledDiv>
       </div>
     </>
   );

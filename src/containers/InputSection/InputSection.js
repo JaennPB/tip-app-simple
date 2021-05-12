@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import Inputs from '../../components/Inputs';
+import Button from '../../components/Button';
 
 const StyledInputSection = styled.div`
   display: flex;
@@ -12,6 +13,7 @@ const InputSection = (props) => {
   return (
     <StyledInputSection>
       <Inputs />
+      <Button>Calculate</Button>
     </StyledInputSection>
   );
 };
