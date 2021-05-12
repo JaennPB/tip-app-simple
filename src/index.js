@@ -1,12 +1,16 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import "./index.css";
-import App from "./App";
+import GobalStyles from './theme/GlobalStyles';
+import { ThemeProvider } from 'styled-components';
+
+import App from './App';
+import Theme from './theme/Theme';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <ThemeProvider theme={Theme}>
+    <GobalStyles />
     <App />
-  </React.StrictMode>,
-  document.getElementById("root")
+  </ThemeProvider>,
+  document.getElementById('root')
 );

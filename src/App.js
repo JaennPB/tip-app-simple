@@ -1,7 +1,11 @@
-import "./App.css";
+import styled from 'styled-components';
 
-function App() {
-  return <p>test</p>;
-}
+const Test = styled.p`
+  color: ${(props) => props.theme.colors.primary};
+`;
+
+const App = () => {
+  return <Test>test</Test>;
+};
 
 export default App;

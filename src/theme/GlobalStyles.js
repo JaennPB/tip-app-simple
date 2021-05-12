@@ -1,3 +1,6 @@
+import { createGlobalStyle } from 'styled-components';
+
+const GobalStyles = createGlobalStyle`
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&display=swap");
 
 /* Setting 1rem = 10px */
@@ -57,3 +60,7 @@ textarea,
 select {
   font: inherit;
 }
+
+`;
+
+export default GobalStyles;
