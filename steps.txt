@@ -1,0 +1,15 @@
+1. Create react app template
+	npx create-react-app
+	cd into folder
+	code .
+2. Delete unnecessary files
+3. Install styled components 
+    create theme folder (add theme and gobal reset)
+4. Create components folder
+    App 
+        MainSection (main tag)
+	UI
+        Card (section tag)
+	Input
+	Buttons
+	
