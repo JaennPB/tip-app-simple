@@ -26,7 +26,7 @@ const OutputSection = (props) => {
   return (
     <StyledOutputSection>
       <StyledResult>
-        Tip: <span>$10.00</span>
+        Tip (15%): <span>$10.00</span>
       </StyledResult>
       <StyledResult>
         Tip per Person (2): <span>$5.00</span>

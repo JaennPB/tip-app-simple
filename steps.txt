@@ -12,4 +12,9 @@
         Card (section tag)
 	Input
 	Buttons
-	
+	ModifyButtons
+	Title
+5. create redux store with redux toolkit
+	store folder
+		index.js
+		reducer.js

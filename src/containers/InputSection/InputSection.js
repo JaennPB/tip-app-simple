@@ -1,4 +1,7 @@
 import styled, { css } from 'styled-components';
+import { useDispatch } from 'react-redux';
+
+import { calculateBill } from '../../store/reducer';
 
 import Inputs from '../../components/Inputs';
 import Button from '../../components/Button';
@@ -19,6 +22,12 @@ const StyledInputSection = styled.div`
 `;
 
 const InputSection = (props) => {
+  const dispatch = useDispatch();
+
+  const calculateHandler = () => {
+    dispatch(calculateBill());
+  };
+
   return (
     <>
       <StyledInputSection>
@@ -26,7 +35,9 @@ const InputSection = (props) => {
       </StyledInputSection>
       <StyledInputSection className="margin" buttonSection>
         <Button>Clear</Button>
-        <Button primary="true">Calculate</Button>
+        <Button primary="true" clicked={calculateHandler}>
+          Calculate
+        </Button>
       </StyledInputSection>
     </>
   );
