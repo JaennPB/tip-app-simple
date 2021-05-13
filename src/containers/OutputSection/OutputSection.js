@@ -19,16 +19,20 @@ const StyledResult = styled.p`
   justify-content: space-between;
   align-items: center;
   font-size: 2rem;
+  font-weight: 300;
 `;
 
 const OutputSection = (props) => {
   return (
     <StyledOutputSection>
       <StyledResult>
-        Tip: <span>$3.99</span>
+        Tip: <span>$10.00</span>
+      </StyledResult>
+      <StyledResult>
+        Tip per Person (2): <span>$5.00</span>
       </StyledResult>
       <StyledResult total>
-        Total: <span>$12.99</span>
+        Total with tip: <span>$110.00</span>
       </StyledResult>
     </StyledOutputSection>
   );

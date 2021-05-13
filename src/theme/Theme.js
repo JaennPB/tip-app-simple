@@ -13,7 +13,7 @@ const theme = {
     padding: '1rem 2rem',
   },
   shadow: {
-    normal: '3px 3px 10px 0px rgba(0,0,0,0.2);',
+    normal: '2px 2px 6px 0px rgba(0,0,0,0.2);',
     card: '6px 6px 13px 0px rgba(0,0,0,0.4);',
     clicked: '1px 1px 6px 0px rgba(0,0,0,0.2);',
   },

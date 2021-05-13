@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const StyledCard = styled.section`
   background-color: ${(props) => props.theme.colors.card};
@@ -7,12 +7,24 @@ const StyledCard = styled.section`
   box-shadow: ${(props) => props.theme.shadow.card};
   height: fit-content;
   width: 70%;
-  margin-bottom: 3rem;
-  padding: 3rem 4.5rem;
+  padding: 2.5rem 4rem;
+
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  ${(props) =>
+    props.isTitle &&
+    css`
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      padding: 1.6rem 3.5rem;
+    `}
 `;
 
 const Card = (props) => {
-  return <StyledCard>{props.children}</StyledCard>;
+  return <StyledCard isTitle={props.title}>{props.children}</StyledCard>;
 };
 
 export default Card;

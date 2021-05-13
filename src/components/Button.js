@@ -15,6 +15,10 @@ const StyledButton = styled.button`
   &:active {
     box-shadow: ${(props) => props.theme.shadow.clicked};
   }
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const Button = (props) => {

@@ -20,7 +20,7 @@ const MainSection = styled.main`
 const App = () => {
   return (
     <MainSection>
-      <Card>
+      <Card title>
         <Title />
       </Card>
       <Card>
