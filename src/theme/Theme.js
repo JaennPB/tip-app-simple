@@ -1,17 +1,21 @@
 const theme = {
   colors: {
-    background: '#2E2F2F',
     font: '#FFFFFF',
     inputLight: '#FFFFFF',
     inputDark: '#F5F5F5',
     card: '#93A8AC',
-    buttonPrimary: '#9BC53D',
-    buttonSecondary: '#D77A61',
+    primary: '#9BC53D',
+    secondary: '#D77A61',
+    tertiary: '#2E2F2F',
   },
   margins: {
-    small: '3rem',
-    medium: '5rem',
-    large: '7rem',
+    borderRadius: '0.5rem',
+    padding: '1rem 2rem',
+  },
+  shadow: {
+    normal: '3px 3px 10px 0px rgba(0,0,0,0.2);',
+    card: '6px 6px 13px 0px rgba(0,0,0,0.4);',
+    clicked: '1px 1px 6px 0px rgba(0,0,0,0.2);',
   },
 };
 
