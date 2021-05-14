@@ -17,7 +17,11 @@ const StyledButton = styled.button`
 `;
 
 const ModifyButton = (props) => {
-  return <StyledButton>{props.children}</StyledButton>;
+  return (
+    <StyledButton onClick={props.clicked} disabled={props.isBelowOne}>
+      {props.children}
+    </StyledButton>
+  );
 };
 
 export default ModifyButton;

@@ -3,7 +3,10 @@ import { createReducer, createAction } from '@reduxjs/toolkit';
 export const setBillData = createAction('tip/setBillData');
 export const setTipData = createAction('tip/setTipData');
 export const setDividedByData = createAction('tip/setDividedByData');
-export const calculateBill = createAction('tip/calculate');
+export const calculateBill = createAction('tip/calculateBill');
+export const clearInputs = createAction('tip/clearInputs');
+export const increaseValue = createAction('tip/increaseValue');
+export const decreaseValue = createAction('tip/DecreaseValue');
 
 const initalState = {
   billAmount: 0,
@@ -24,7 +27,33 @@ const reducer = createReducer(initalState, (builder) => {
   builder.addCase(setDividedByData, (state, action) => {
     state.dividedBy = Number(action.payload);
   });
-  builder.addCase(calculateBill, (state, action) => {});
+  builder.addCase(calculateBill, (state) => {
+    state.tip = state.billAmount * (state.tipPercent / 100);
+    state.tipPerPerson = state.tip / state.dividedBy;
+    state.totalWithTip = state.tip + state.billAmount;
+  });
+  builder.addCase(clearInputs, (state) => {
+    state.billAmount = null;
+    state.tipPercent = null;
+    state.dividedBy = 1;
+    state.tip = 0;
+    state.tipPerPerson = 0;
+    state.totalWithTip = 0;
+  });
+  builder.addCase(increaseValue, (state, action) => {
+    if (action.payload === 'tip') {
+      state.tipPercent++;
+    } else if (action.payload === 'people') {
+      state.dividedBy++;
+    }
+  });
+  builder.addCase(decreaseValue, (state, action) => {
+    if (action.payload === 'tip') {
+      state.tipPercent--;
+    } else if (action.payload === 'people') {
+      state.dividedBy--;
+    }
+  });
 });
 
 export default reducer;

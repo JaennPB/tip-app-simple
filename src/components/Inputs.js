@@ -1,7 +1,13 @@
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setBillData, setTipData, setDividedByData } from '../store/reducer';
+import {
+  setBillData,
+  setTipData,
+  setDividedByData,
+  increaseValue,
+  decreaseValue,
+} from '../store/reducer';
 
 import ModifyButton from './ModifyButton';
 
@@ -65,6 +71,14 @@ const Inputs = (props) => {
     dispatch(setDividedByData(dividedBy));
   };
 
+  const increaseValueHandler = (target) => {
+    dispatch(increaseValue(target));
+  };
+
+  const decreaseValueHandler = (target) => {
+    dispatch(decreaseValue(target));
+  };
+
   return (
     <>
       <div>
@@ -72,9 +86,9 @@ const Inputs = (props) => {
         <StyledInput
           type="number"
           id="bill"
-          defaultValue="0.00"
-          // value={billValue}
+          value={!billValue ? '' : billValue}
           onChange={(e) => sendBillData(e.target.value)}
+          placeholder="Bill Amount"
         />
       </div>
       <div>
@@ -82,15 +96,22 @@ const Inputs = (props) => {
           Tip percent %
         </StyledLabel>
         <StyledDiv>
-          <ModifyButton>-</ModifyButton>
+          <ModifyButton
+            clicked={() => decreaseValueHandler('tip')}
+            isBelowOne={tipValue === 1}
+          >
+            -
+          </ModifyButton>
           <StyledInput2
             type="number"
             id="tip"
-            defaultValue="15"
-            // value={tipValue}
+            value={!tipValue ? '' : tipValue}
             onChange={(e) => sendTipData(e.target.value)}
+            placeholder="Tip in percentage"
           />
-          <ModifyButton>+</ModifyButton>
+          <ModifyButton clicked={() => increaseValueHandler('tip')}>
+            +
+          </ModifyButton>
         </StyledDiv>
       </div>
       <div>
@@ -98,15 +119,22 @@ const Inputs = (props) => {
           Divide by
         </StyledLabel>
         <StyledDiv>
-          <ModifyButton>-</ModifyButton>
+          <ModifyButton
+            clicked={() => decreaseValueHandler('people')}
+            isBelowOne={dividedByValue === 1}
+          >
+            -
+          </ModifyButton>
           <StyledInput2
             type="number"
             id="people"
-            defaultValue="1"
-            // value={dividedByValue}
+            value={!dividedByValue ? '' : dividedByValue}
             onChange={(e) => sendDividedByData(e.target.value)}
+            placeholder="Number of people"
           />
-          <ModifyButton>+</ModifyButton>
+          <ModifyButton clicked={() => increaseValueHandler('people')}>
+            +
+          </ModifyButton>
         </StyledDiv>
       </div>
     </>

@@ -6,15 +6,25 @@
 3. Install styled components 
     create theme folder (add theme and gobal reset)
 4. Create components folder
-    App 
+    App:
         MainSection (main tag)
-	UI
+	UI:
         Card (section tag)
-	Input
-	Buttons
-	ModifyButtons
-	Title
-5. create redux store with redux toolkit
+		Button
+		Title
+		ModifyButtons	
+		Input
+	containers: 
+		InputSection
+		OutputSection
+5. install react-redux + @reduxjs/toolkit
+6. create redux store with redux toolkit
 	store folder
-		index.js
 		reducer.js
+			create reducer with inital state + actions
+			export reducer
+		index.js
+			configure store/set reducer
+			import reducer
+7. import actions in components where needed (useDispatch)
+8. import state where needed (useSelector)

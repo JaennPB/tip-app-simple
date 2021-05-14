@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useSelector } from 'react-redux';
 
 const StyledOutputSection = styled.div`
   display: flex;
@@ -23,16 +24,22 @@ const StyledResult = styled.p`
 `;
 
 const OutputSection = (props) => {
+  const tip = useSelector((state) => state.tip);
+  const tipPerPerson = useSelector((state) => state.tipPerPerson);
+  const totalWithTip = useSelector((state) => state.totalWithTip);
+  const tipPercent = useSelector((state) => state.tipPercent);
+  const dividedBy = useSelector((state) => state.dividedBy);
+
   return (
     <StyledOutputSection>
       <StyledResult>
-        Tip (15%): <span>$10.00</span>
+        Tip ({tipPercent}%): <span>${tip.toFixed(2)}</span>
       </StyledResult>
       <StyledResult>
-        Tip per Person (2): <span>$5.00</span>
+        Tip per Person ({dividedBy}): <span>${tipPerPerson.toFixed(2)}</span>
       </StyledResult>
       <StyledResult total>
-        Total with tip: <span>$110.00</span>
+        Total with tip: <span>${totalWithTip.toFixed(2)}</span>
       </StyledResult>
     </StyledOutputSection>
   );
