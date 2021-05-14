@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import { ThemeProvider } from 'styled-components';
 import { Provider } from 'react-redux';
 
-import GobalStyles from './theme/GlobalStyles';
 import App from './App';
+import GobalStyles from './theme/GlobalStyles';
 import Theme from './theme/Theme';
 import store from './store/index';
 

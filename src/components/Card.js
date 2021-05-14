@@ -1,5 +1,8 @@
 import styled, { css } from 'styled-components';
 
+// =======================================================================================
+// ============================================================================= styles
+
 const StyledCard = styled.section`
   background-color: ${(props) => props.theme.colors.card};
   color: ${(props) => props.theme.colors.font};
@@ -22,6 +25,9 @@ const StyledCard = styled.section`
       padding: 1.6rem 3.5rem;
     `}
 `;
+
+// =======================================================================================
+// ============================================================================= component
 
 const Card = (props) => {
   return <StyledCard isTitle={props.title}>{props.children}</StyledCard>;

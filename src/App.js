@@ -5,6 +5,9 @@ import Card from './components/Card';
 import InputSection from './containers/InputSection/InputSection';
 import OutputSection from './containers/OutputSection/OutputSection';
 
+// =======================================================================================
+// ============================================================================= styles
+
 const MainSection = styled.main`
   display: flex;
   flex-direction: column;
@@ -16,6 +19,9 @@ const MainSection = styled.main`
 
   font-size: 1.6rem;
 `;
+
+// =======================================================================================
+// ============================================================================= component
 
 const App = () => {
   return (

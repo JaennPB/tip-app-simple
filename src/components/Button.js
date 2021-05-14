@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 
+// =======================================================================================
+// ============================================================================= styles
+
 const StyledButton = styled.button`
   background-color: ${(props) =>
     props.color ? props.theme.colors.primary : props.theme.colors.secondary};
@@ -20,6 +23,9 @@ const StyledButton = styled.button`
     cursor: pointer;
   }
 `;
+
+// =======================================================================================
+// ============================================================================= component
 
 const Button = (props) => {
   return (

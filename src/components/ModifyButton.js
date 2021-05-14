@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 
+// =======================================================================================
+// ============================================================================= styles
+
 const StyledButton = styled.button`
   padding: ${(props) => props.theme.margins.padding};
   border-radius: ${(props) => props.theme.margins.borderRadius};
@@ -12,13 +15,16 @@ const StyledButton = styled.button`
   }
 
   &:hover {
-    cursor: pointer;
+    cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
   }
 `;
 
+// =======================================================================================
+// ============================================================================= component
+
 const ModifyButton = (props) => {
   return (
-    <StyledButton onClick={props.clicked} disabled={props.isBelowOne}>
+    <StyledButton onClick={props.clicked} disabled={props.disabled}>
       {props.children}
     </StyledButton>
   );

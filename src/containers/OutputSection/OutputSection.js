@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 
+// =======================================================================================
+// ============================================================================= styles
+
 const StyledOutputSection = styled.div`
   display: flex;
   flex-direction: column;
@@ -22,6 +25,9 @@ const StyledResult = styled.p`
   font-size: 2rem;
   font-weight: 300;
 `;
+
+// =======================================================================================
+// ============================================================================= component
 
 const OutputSection = (props) => {
   const tip = useSelector((state) => state.tip);
