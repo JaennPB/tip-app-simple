@@ -27,4 +27,8 @@
 			configure store/set reducer
 			import reducer
 7. import actions in components where needed (useDispatch)
+	to: 
+		setData (each has a separate action)
+		CalculateBill (total, tip and per person)
+		ModifyButtons (increase and decrease)
 8. import state where needed (useSelector)
